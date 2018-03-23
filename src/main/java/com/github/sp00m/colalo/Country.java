@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.qudini.core.Country.Alpha2.*;
-import static com.qudini.core.Country.Alpha3.*;
-import static com.qudini.core.Country.Numeric.*;
+import static com.github.sp00m.colalo.Country.Alpha2.*;
+import static com.github.sp00m.colalo.Country.Alpha3.*;
+import static com.github.sp00m.colalo.Country.Numeric.*;
 import static java.util.Arrays.stream;
 import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.collectingAndThen;
@@ -14,257 +14,257 @@ import static java.util.stream.Collectors.toMap;
 
 public enum Country {
 
-        AFGHANISTAN("Afghanistan", AF, AFG, N004),
-        ALAND_ISLANDS("Åland Islands", AX, ALA, N248),
-        ALBANIA("Albania", AL, ALB, N008),
-        ALGERIA("Algeria", DZ, DZA, N012),
-        AMERICAN_SAMOA("American Samoa", AS, ASM, N016),
-        ANDORRA("Andorra", AD, AND, N020),
-        ANGOLA("Angola", AO, AGO, N024),
-        ANGUILLA("Anguilla", AI, AIA, N660),
-        ANTARCTICA("Antarctica", AQ, ATA, N010),
-        ANTIGUA_AND_BARBUDA("Antigua and Barbuda", AG, ATG, N028),
-        ARGENTINA("Argentina", AR, ARG, N032),
-        ARMENIA("Armenia", AM, ARM, N051),
-        ARUBA("Aruba", AW, ABW, N533),
-        AUSTRALIA("Australia", AU, AUS, N036),
-        AUSTRIA("Austria", AT, AUT, N040),
-        AZERBAIJAN("Azerbaijan", AZ, AZE, N031),
-        BAHAMAS("Bahamas", BS, BHS, N044),
-        BAHRAIN("Bahrain", BH, BHR, N048),
-        BANGLADESH("Bangladesh", BD, BGD, N050),
-        BARBADOS("Barbados", BB, BRB, N052),
-        BELARUS("Belarus", BY, BLR, N112),
-        BELGIUM("Belgium", BE, BEL, N056),
-        BELIZE("Belize", BZ, BLZ, N084),
-        BENIN("Benin", BJ, BEN, N204),
-        BERMUDA("Bermuda", BM, BMU, N060),
-        BHUTAN("Bhutan", BT, BTN, N064),
-        BOLIVIA_PLURINATIONAL_STATE_OF("Bolivia, Plurinational State of", BO, BOL, N068),
-        BONAIRE_SINT_EUSTATIUS_AND_SABA("Bonaire, Sint Eustatius and Saba", BQ, BES, N535),
-        BOSNIA_AND_HERZEGOVINA("Bosnia and Herzegovina", BA, BIH, N070),
-        BOTSWANA("Botswana", BW, BWA, N072),
-        BOUVET_ISLAND("Bouvet Island", BV, BVT, N074),
-        BRAZIL("Brazil", BR, BRA, N076),
-        BRITISH_INDIAN_OCEAN_TERRITORY("British Indian Ocean Territory", IO, IOT, N086),
-        BRUNEI_DARUSSALAM("Brunei Darussalam", BN, BRN, N096),
-        BULGARIA("Bulgaria", BG, BGR, N100),
-        BURKINA_FASO("Burkina Faso", BF, BFA, N854),
-        BURUNDI("Burundi", BI, BDI, N108),
-        CABO_VERDE("Cabo Verde", CV, CPV, N132),
-        CAMBODIA("Cambodia", KH, KHM, N116),
-        CAMEROON("Cameroon", CM, CMR, N120),
-        CANADA("Canada", CA, CAN, N124),
-        CAYMAN_ISLANDS("Cayman Islands", KY, CYM, N136),
-        CENTRAL_AFRICAN_REPUBLIC("Central African Republic", CF, CAF, N140),
-        CHAD("Chad", TD, TCD, N148),
-        CHILE("Chile", CL, CHL, N152),
-        CHINA("China", CN, CHN, N156),
-        CHRISTMAS_ISLAND("Christmas Island", CX, CXR, N162),
-        COCOS_KEELING_ISLANDS("Cocos (Keeling) Islands", CC, CCK, N166),
-        COLOMBIA("Colombia", CO, COL, N170),
-        COMOROS("Comoros", KM, COM, N174),
-        CONGO("Congo", CG, COG, N178),
-        CONGO_THE_DEMOCRATIC_REPUBLIC_OF_THE("Congo, the Democratic Republic of the", CD, COD, N180),
-        COOK_ISLANDS("Cook Islands", CK, COK, N184),
-        COSTA_RICA("Costa Rica", CR, CRI, N188),
-        COTE_D_IVOIRE("Côte d'Ivoire", CI, CIV, N384),
-        CROATIA("Croatia", HR, HRV, N191),
-        CUBA("Cuba", CU, CUB, N192),
-        CURACAO("Curaçao", CW, CUW, N531),
-        CYPRUS("Cyprus", CY, CYP, N196),
-        CZECHIA("Czechia", CZ, CZE, N203),
-        DENMARK("Denmark", DK, DNK, N208),
-        DJIBOUTI("Djibouti", DJ, DJI, N262),
-        DOMINICA("Dominica", DM, DMA, N212),
-        DOMINICAN_REPUBLIC("Dominican Republic", DO, DOM, N214),
-        ECUADOR("Ecuador", EC, ECU, N218),
-        EGYPT("Egypt", EG, EGY, N818),
-        EL_SALVADOR("El Salvador", SV, SLV, N222),
-        EQUATORIAL_GUINEA("Equatorial Guinea", GQ, GNQ, N226),
-        ERITREA("Eritrea", ER, ERI, N232),
-        ESTONIA("Estonia", EE, EST, N233),
-        ETHIOPIA("Ethiopia", ET, ETH, N231),
-        FALKLAND_ISLANDS_MALVINAS("Falkland Islands (Malvinas)", FK, FLK, N238),
-        FAROE_ISLANDS("Faroe Islands", FO, FRO, N234),
-        FIJI("Fiji", FJ, FJI, N242),
-        FINLAND("Finland", FI, FIN, N246),
-        FRANCE("France", FR, FRA, N250),
-        FRENCH_GUIANA("French Guiana", GF, GUF, N254),
-        FRENCH_POLYNESIA("French Polynesia", PF, PYF, N258),
-        FRENCH_SOUTHERN_TERRITORIES("French Southern Territories", TF, ATF, N260),
-        GABON("Gabon", GA, GAB, N266),
-        GAMBIA("Gambia", GM, GMB, N270),
-        GEORGIA("Georgia", GE, GEO, N268),
-        GERMANY("Germany", DE, DEU, N276),
-        GHANA("Ghana", GH, GHA, N288),
-        GIBRALTAR("Gibraltar", GI, GIB, N292),
-        GREECE("Greece", GR, GRC, N300),
-        GREENLAND("Greenland", GL, GRL, N304),
-        GRENADA("Grenada", GD, GRD, N308),
-        GUADELOUPE("Guadeloupe", GP, GLP, N312),
-        GUAM("Guam", GU, GUM, N316),
-        GUATEMALA("Guatemala", GT, GTM, N320),
-        GUERNSEY("Guernsey", GG, GGY, N831),
-        GUINEA("Guinea", GN, GIN, N324),
-        GUINEA_BISSAU("Guinea-Bissau", GW, GNB, N624),
-        GUYANA("Guyana", GY, GUY, N328),
-        HAITI("Haiti", HT, HTI, N332),
-        HEARD_ISLAND_AND_MCDONALD_ISLANDS("Heard Island and McDonald Islands", HM, HMD, N334),
-        HOLY_SEE("Holy See", VA, VAT, N336),
-        HONDURAS("Honduras", HN, HND, N340),
-        HONG_KONG("Hong Kong", HK, HKG, N344),
-        HUNGARY("Hungary", HU, HUN, N348),
-        ICELAND("Iceland", IS, ISL, N352),
-        INDIA("India", IN, IND, N356),
-        INDONESIA("Indonesia", ID, IDN, N360),
-        IRAN_ISLAMIC_REPUBLIC_OF("Iran, Islamic Republic of", IR, IRN, N364),
-        IRAQ("Iraq", IQ, IRQ, N368),
-        IRELAND("Ireland", IE, IRL, N372),
-        ISLE_OF_MAN("Isle of Man", IM, IMN, N833),
-        ISRAEL("Israel", IL, ISR, N376),
-        ITALY("Italy", IT, ITA, N380),
-        JAMAICA("Jamaica", JM, JAM, N388),
-        JAPAN("Japan", JP, JPN, N392),
-        JERSEY("Jersey", JE, JEY, N832),
-        JORDAN("Jordan", JO, JOR, N400),
-        KAZAKHSTAN("Kazakhstan", KZ, KAZ, N398),
-        KENYA("Kenya", KE, KEN, N404),
-        KIRIBATI("Kiribati", KI, KIR, N296),
-        KOREA_DEMOCRATIC_PEOPLE_S_REPUBLIC_OF("Korea, Democratic People's Republic of", KP, PRK, N408),
-        KOREA_REPUBLIC_OF("Korea, Republic of", KR, KOR, N410),
-        KUWAIT("Kuwait", KW, KWT, N414),
-        KYRGYZSTAN("Kyrgyzstan", KG, KGZ, N417),
-        LAO_PEOPLE_S_DEMOCRATIC_REPUBLIC("Lao People's Democratic Republic", LA, LAO, N418),
-        LATVIA("Latvia", LV, LVA, N428),
-        LEBANON("Lebanon", LB, LBN, N422),
-        LESOTHO("Lesotho", LS, LSO, N426),
-        LIBERIA("Liberia", LR, LBR, N430),
-        LIBYA("Libya", LY, LBY, N434),
-        LIECHTENSTEIN("Liechtenstein", LI, LIE, N438),
-        LITHUANIA("Lithuania", LT, LTU, N440),
-        LUXEMBOURG("Luxembourg", LU, LUX, N442),
-        MACAO("Macao", MO, MAC, N446),
-        MACEDONIA_THE_FORMER_YUGOSLAV_REPUBLIC_OF("Macedonia, the former Yugoslav Republic of", MK, MKD, N807),
-        MADAGASCAR("Madagascar", MG, MDG, N450),
-        MALAWI("Malawi", MW, MWI, N454),
-        MALAYSIA("Malaysia", MY, MYS, N458),
-        MALDIVES("Maldives", MV, MDV, N462),
-        MALI("Mali", ML, MLI, N466),
-        MALTA("Malta", MT, MLT, N470),
-        MARSHALL_ISLANDS("Marshall Islands", MH, MHL, N584),
-        MARTINIQUE("Martinique", MQ, MTQ, N474),
-        MAURITANIA("Mauritania", MR, MRT, N478),
-        MAURITIUS("Mauritius", MU, MUS, N480),
-        MAYOTTE("Mayotte", YT, MYT, N175),
-        MEXICO("Mexico", MX, MEX, N484),
-        MICRONESIA_FEDERATED_STATES_OF("Micronesia, Federated States of", FM, FSM, N583),
-        MOLDOVA_REPUBLIC_OF("Moldova, Republic of", MD, MDA, N498),
-        MONACO("Monaco", MC, MCO, N492),
-        MONGOLIA("Mongolia", MN, MNG, N496),
-        MONTENEGRO("Montenegro", ME, MNE, N499),
-        MONTSERRAT("Montserrat", MS, MSR, N500),
-        MOROCCO("Morocco", MA, MAR, N504),
-        MOZAMBIQUE("Mozambique", MZ, MOZ, N508),
-        MYANMAR("Myanmar", MM, MMR, N104),
-        NAMIBIA("Namibia", NA, NAM, N516),
-        NAURU("Nauru", NR, NRU, N520),
-        NEPAL("Nepal", NP, NPL, N524),
-        NETHERLANDS("Netherlands", NL, NLD, N528),
-        NEW_CALEDONIA("New Caledonia", NC, NCL, N540),
-        NEW_ZEALAND("New Zealand", NZ, NZL, N554),
-        NICARAGUA("Nicaragua", NI, NIC, N558),
-        NIGER("Niger", NE, NER, N562),
-        NIGERIA("Nigeria", NG, NGA, N566),
-        NIUE("Niue", NU, NIU, N570),
-        NORFOLK_ISLAND("Norfolk Island", NF, NFK, N574),
-        NORTHERN_MARIANA_ISLANDS("Northern Mariana Islands", MP, MNP, N580),
-        NORWAY("Norway", NO, NOR, N578),
-        OMAN("Oman", OM, OMN, N512),
-        PAKISTAN("Pakistan", PK, PAK, N586),
-        PALAU("Palau", PW, PLW, N585),
-        PALESTINE_STATE_OF("Palestine, State of", PS, PSE, N275),
-        PANAMA("Panama", PA, PAN, N591),
-        PAPUA_NEW_GUINEA("Papua New Guinea", PG, PNG, N598),
-        PARAGUAY("Paraguay", PY, PRY, N600),
-        PERU("Peru", PE, PER, N604),
-        PHILIPPINES("Philippines", PH, PHL, N608),
-        PITCAIRN("Pitcairn", PN, PCN, N612),
-        POLAND("Poland", PL, POL, N616),
-        PORTUGAL("Portugal", PT, PRT, N620),
-        PUERTO_RICO("Puerto Rico", PR, PRI, N630),
-        QATAR("Qatar", QA, QAT, N634),
-        REUNION("Réunion", RE, REU, N638),
-        ROMANIA("Romania", RO, ROU, N642),
-        RUSSIAN_FEDERATION("Russian Federation", RU, RUS, N643),
-        RWANDA("Rwanda", RW, RWA, N646),
-        SAINT_BARTHELEMY("Saint Barthélemy", BL, BLM, N652),
-        SAINT_HELENA_ASCENSION_AND_TRISTAN_DA_CUNHA("Saint Helena, Ascension and Tristan da Cunha", SH, SHN, N654),
-        SAINT_KITTS_AND_NEVIS("Saint Kitts and Nevis", KN, KNA, N659),
-        SAINT_LUCIA("Saint Lucia", LC, LCA, N662),
-        SAINT_MARTIN_FRENCH_PART("Saint Martin (French part)", MF, MAF, N663),
-        SAINT_PIERRE_AND_MIQUELON("Saint Pierre and Miquelon", PM, SPM, N666),
-        SAINT_VINCENT_AND_THE_GRENADINES("Saint Vincent and the Grenadines", VC, VCT, N670),
-        SAMOA("Samoa", WS, WSM, N882),
-        SAN_MARINO("San Marino", SM, SMR, N674),
-        SAO_TOME_AND_PRINCIPE("Sao Tome and Principe", ST, STP, N678),
-        SAUDI_ARABIA("Saudi Arabia", SA, SAU, N682),
-        SENEGAL("Senegal", SN, SEN, N686),
-        SERBIA("Serbia", RS, SRB, N688),
-        SEYCHELLES("Seychelles", SC, SYC, N690),
-        SIERRA_LEONE("Sierra Leone", SL, SLE, N694),
-        SINGAPORE("Singapore", SG, SGP, N702),
-        SINT_MAARTEN_DUTCH_PART("Sint Maarten (Dutch part)", SX, SXM, N534),
-        SLOVAKIA("Slovakia", SK, SVK, N703),
-        SLOVENIA("Slovenia", SI, SVN, N705),
-        SOLOMON_ISLANDS("Solomon Islands", SB, SLB, N090),
-        SOMALIA("Somalia", SO, SOM, N706),
-        SOUTH_AFRICA("South Africa", ZA, ZAF, N710),
-        SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS("South Georgia and the South Sandwich Islands", GS, SGS, N239),
-        SOUTH_SUDAN("South Sudan", SS, SSD, N728),
-        SPAIN("Spain", ES, ESP, N724),
-        SRI_LANKA("Sri Lanka", LK, LKA, N144),
-        SUDAN("Sudan", SD, SDN, N729),
-        SURINAME("Suriname", SR, SUR, N740),
-        SVALBARD_AND_JAN_MAYEN("Svalbard and Jan Mayen", SJ, SJM, N744),
-        SWAZILAND("Swaziland", SZ, SWZ, N748),
-        SWEDEN("Sweden", SE, SWE, N752),
-        SWITZERLAND("Switzerland", CH, CHE, N756),
-        SYRIAN_ARAB_REPUBLIC("Syrian Arab Republic", SY, SYR, N760),
-        TAIWAN_PROVINCE_OF_CHINA("Taiwan, Province of China", TW, TWN, N158),
-        TAJIKISTAN("Tajikistan", TJ, TJK, N762),
-        TANZANIA_UNITED_REPUBLIC_OF("Tanzania, United Republic of", TZ, TZA, N834),
-        THAILAND("Thailand", TH, THA, N764),
-        TIMOR_LESTE("Timor-Leste", TL, TLS, N626),
-        TOGO("Togo", TG, TGO, N768),
-        TOKELAU("Tokelau", TK, TKL, N772),
-        TONGA("Tonga", TO, TON, N776),
-        TRINIDAD_AND_TOBAGO("Trinidad and Tobago", TT, TTO, N780),
-        TUNISIA("Tunisia", TN, TUN, N788),
-        TURKEY("Turkey", TR, TUR, N792),
-        TURKMENISTAN("Turkmenistan", TM, TKM, N795),
-        TURKS_AND_CAICOS_ISLANDS("Turks and Caicos Islands", TC, TCA, N796),
-        TUVALU("Tuvalu", TV, TUV, N798),
-        UGANDA("Uganda", UG, UGA, N800),
-        UKRAINE("Ukraine", UA, UKR, N804),
-        UNITED_ARAB_EMIRATES("United Arab Emirates", AE, ARE, N784),
-        UNITED_KINGDOM("United Kingdom", GB, GBR, N826),
-        UNITED_STATES_MINOR_OUTLYING_ISLANDS("United States Minor Outlying Islands", UM, UMI, N581),
-        UNITED_STATES_OF_AMERICA("United States of America", US, USA, N840),
-        URUGUAY("Uruguay", UY, URY, N858),
-        UZBEKISTAN("Uzbekistan", UZ, UZB, N860),
-        VANUATU("Vanuatu", VU, VUT, N548),
-        VENEZUELA_BOLIVARIAN_REPUBLIC_OF("Venezuela, Bolivarian Republic of", VE, VEN, N862),
-        VIET_NAM("Viet Nam", VN, VNM, N704),
-        VIRGIN_ISLANDS_BRITISH("Virgin Islands, British", VG, VGB, N092),
-        VIRGIN_ISLANDS_US("Virgin Islands, U.S.", VI, VIR, N850),
-        WALLIS_AND_FUTUNA("Wallis and Futuna", WF, WLF, N876),
-        WESTERN_SAHARA("Western Sahara", EH, ESH, N732),
-        YEMEN("Yemen", YE, YEM, N887),
-        ZAMBIA("Zambia", ZM, ZMB, N894),
-        ZIMBABWE("Zimbabwe", ZW, ZWE, N716);
+    AFGHANISTAN("Afghanistan", AF, AFG, N004),
+    ALAND_ISLANDS("Åland Islands", AX, ALA, N248),
+    ALBANIA("Albania", AL, ALB, N008),
+    ALGERIA("Algeria", DZ, DZA, N012),
+    AMERICAN_SAMOA("American Samoa", AS, ASM, N016),
+    ANDORRA("Andorra", AD, AND, N020),
+    ANGOLA("Angola", AO, AGO, N024),
+    ANGUILLA("Anguilla", AI, AIA, N660),
+    ANTARCTICA("Antarctica", AQ, ATA, N010),
+    ANTIGUA_AND_BARBUDA("Antigua and Barbuda", AG, ATG, N028),
+    ARGENTINA("Argentina", AR, ARG, N032),
+    ARMENIA("Armenia", AM, ARM, N051),
+    ARUBA("Aruba", AW, ABW, N533),
+    AUSTRALIA("Australia", AU, AUS, N036),
+    AUSTRIA("Austria", AT, AUT, N040),
+    AZERBAIJAN("Azerbaijan", AZ, AZE, N031),
+    BAHAMAS("Bahamas", BS, BHS, N044),
+    BAHRAIN("Bahrain", BH, BHR, N048),
+    BANGLADESH("Bangladesh", BD, BGD, N050),
+    BARBADOS("Barbados", BB, BRB, N052),
+    BELARUS("Belarus", BY, BLR, N112),
+    BELGIUM("Belgium", BE, BEL, N056),
+    BELIZE("Belize", BZ, BLZ, N084),
+    BENIN("Benin", BJ, BEN, N204),
+    BERMUDA("Bermuda", BM, BMU, N060),
+    BHUTAN("Bhutan", BT, BTN, N064),
+    BOLIVIA_PLURINATIONAL_STATE_OF("Bolivia, Plurinational State of", BO, BOL, N068),
+    BONAIRE_SINT_EUSTATIUS_AND_SABA("Bonaire, Sint Eustatius and Saba", BQ, BES, N535),
+    BOSNIA_AND_HERZEGOVINA("Bosnia and Herzegovina", BA, BIH, N070),
+    BOTSWANA("Botswana", BW, BWA, N072),
+    BOUVET_ISLAND("Bouvet Island", BV, BVT, N074),
+    BRAZIL("Brazil", BR, BRA, N076),
+    BRITISH_INDIAN_OCEAN_TERRITORY("British Indian Ocean Territory", IO, IOT, N086),
+    BRUNEI_DARUSSALAM("Brunei Darussalam", BN, BRN, N096),
+    BULGARIA("Bulgaria", BG, BGR, N100),
+    BURKINA_FASO("Burkina Faso", BF, BFA, N854),
+    BURUNDI("Burundi", BI, BDI, N108),
+    CABO_VERDE("Cabo Verde", CV, CPV, N132),
+    CAMBODIA("Cambodia", KH, KHM, N116),
+    CAMEROON("Cameroon", CM, CMR, N120),
+    CANADA("Canada", CA, CAN, N124),
+    CAYMAN_ISLANDS("Cayman Islands", KY, CYM, N136),
+    CENTRAL_AFRICAN_REPUBLIC("Central African Republic", CF, CAF, N140),
+    CHAD("Chad", TD, TCD, N148),
+    CHILE("Chile", CL, CHL, N152),
+    CHINA("China", CN, CHN, N156),
+    CHRISTMAS_ISLAND("Christmas Island", CX, CXR, N162),
+    COCOS_KEELING_ISLANDS("Cocos (Keeling) Islands", CC, CCK, N166),
+    COLOMBIA("Colombia", CO, COL, N170),
+    COMOROS("Comoros", KM, COM, N174),
+    CONGO("Congo", CG, COG, N178),
+    CONGO_THE_DEMOCRATIC_REPUBLIC_OF_THE("Congo, the Democratic Republic of the", CD, COD, N180),
+    COOK_ISLANDS("Cook Islands", CK, COK, N184),
+    COSTA_RICA("Costa Rica", CR, CRI, N188),
+    COTE_D_IVOIRE("Côte d'Ivoire", CI, CIV, N384),
+    CROATIA("Croatia", HR, HRV, N191),
+    CUBA("Cuba", CU, CUB, N192),
+    CURACAO("Curaçao", CW, CUW, N531),
+    CYPRUS("Cyprus", CY, CYP, N196),
+    CZECHIA("Czechia", CZ, CZE, N203),
+    DENMARK("Denmark", DK, DNK, N208),
+    DJIBOUTI("Djibouti", DJ, DJI, N262),
+    DOMINICA("Dominica", DM, DMA, N212),
+    DOMINICAN_REPUBLIC("Dominican Republic", DO, DOM, N214),
+    ECUADOR("Ecuador", EC, ECU, N218),
+    EGYPT("Egypt", EG, EGY, N818),
+    EL_SALVADOR("El Salvador", SV, SLV, N222),
+    EQUATORIAL_GUINEA("Equatorial Guinea", GQ, GNQ, N226),
+    ERITREA("Eritrea", ER, ERI, N232),
+    ESTONIA("Estonia", EE, EST, N233),
+    ETHIOPIA("Ethiopia", ET, ETH, N231),
+    FALKLAND_ISLANDS_MALVINAS("Falkland Islands (Malvinas)", FK, FLK, N238),
+    FAROE_ISLANDS("Faroe Islands", FO, FRO, N234),
+    FIJI("Fiji", FJ, FJI, N242),
+    FINLAND("Finland", FI, FIN, N246),
+    FRANCE("France", FR, FRA, N250),
+    FRENCH_GUIANA("French Guiana", GF, GUF, N254),
+    FRENCH_POLYNESIA("French Polynesia", PF, PYF, N258),
+    FRENCH_SOUTHERN_TERRITORIES("French Southern Territories", TF, ATF, N260),
+    GABON("Gabon", GA, GAB, N266),
+    GAMBIA("Gambia", GM, GMB, N270),
+    GEORGIA("Georgia", GE, GEO, N268),
+    GERMANY("Germany", DE, DEU, N276),
+    GHANA("Ghana", GH, GHA, N288),
+    GIBRALTAR("Gibraltar", GI, GIB, N292),
+    GREECE("Greece", GR, GRC, N300),
+    GREENLAND("Greenland", GL, GRL, N304),
+    GRENADA("Grenada", GD, GRD, N308),
+    GUADELOUPE("Guadeloupe", GP, GLP, N312),
+    GUAM("Guam", GU, GUM, N316),
+    GUATEMALA("Guatemala", GT, GTM, N320),
+    GUERNSEY("Guernsey", GG, GGY, N831),
+    GUINEA("Guinea", GN, GIN, N324),
+    GUINEA_BISSAU("Guinea-Bissau", GW, GNB, N624),
+    GUYANA("Guyana", GY, GUY, N328),
+    HAITI("Haiti", HT, HTI, N332),
+    HEARD_ISLAND_AND_MCDONALD_ISLANDS("Heard Island and McDonald Islands", HM, HMD, N334),
+    HOLY_SEE("Holy See", VA, VAT, N336),
+    HONDURAS("Honduras", HN, HND, N340),
+    HONG_KONG("Hong Kong", HK, HKG, N344),
+    HUNGARY("Hungary", HU, HUN, N348),
+    ICELAND("Iceland", IS, ISL, N352),
+    INDIA("India", IN, IND, N356),
+    INDONESIA("Indonesia", ID, IDN, N360),
+    IRAN_ISLAMIC_REPUBLIC_OF("Iran, Islamic Republic of", IR, IRN, N364),
+    IRAQ("Iraq", IQ, IRQ, N368),
+    IRELAND("Ireland", IE, IRL, N372),
+    ISLE_OF_MAN("Isle of Man", IM, IMN, N833),
+    ISRAEL("Israel", IL, ISR, N376),
+    ITALY("Italy", IT, ITA, N380),
+    JAMAICA("Jamaica", JM, JAM, N388),
+    JAPAN("Japan", JP, JPN, N392),
+    JERSEY("Jersey", JE, JEY, N832),
+    JORDAN("Jordan", JO, JOR, N400),
+    KAZAKHSTAN("Kazakhstan", KZ, KAZ, N398),
+    KENYA("Kenya", KE, KEN, N404),
+    KIRIBATI("Kiribati", KI, KIR, N296),
+    KOREA_DEMOCRATIC_PEOPLE_S_REPUBLIC_OF("Korea, Democratic People's Republic of", KP, PRK, N408),
+    KOREA_REPUBLIC_OF("Korea, Republic of", KR, KOR, N410),
+    KUWAIT("Kuwait", KW, KWT, N414),
+    KYRGYZSTAN("Kyrgyzstan", KG, KGZ, N417),
+    LAO_PEOPLE_S_DEMOCRATIC_REPUBLIC("Lao People's Democratic Republic", LA, LAO, N418),
+    LATVIA("Latvia", LV, LVA, N428),
+    LEBANON("Lebanon", LB, LBN, N422),
+    LESOTHO("Lesotho", LS, LSO, N426),
+    LIBERIA("Liberia", LR, LBR, N430),
+    LIBYA("Libya", LY, LBY, N434),
+    LIECHTENSTEIN("Liechtenstein", LI, LIE, N438),
+    LITHUANIA("Lithuania", LT, LTU, N440),
+    LUXEMBOURG("Luxembourg", LU, LUX, N442),
+    MACAO("Macao", MO, MAC, N446),
+    MACEDONIA_THE_FORMER_YUGOSLAV_REPUBLIC_OF("Macedonia, the former Yugoslav Republic of", MK, MKD, N807),
+    MADAGASCAR("Madagascar", MG, MDG, N450),
+    MALAWI("Malawi", MW, MWI, N454),
+    MALAYSIA("Malaysia", MY, MYS, N458),
+    MALDIVES("Maldives", MV, MDV, N462),
+    MALI("Mali", ML, MLI, N466),
+    MALTA("Malta", MT, MLT, N470),
+    MARSHALL_ISLANDS("Marshall Islands", MH, MHL, N584),
+    MARTINIQUE("Martinique", MQ, MTQ, N474),
+    MAURITANIA("Mauritania", MR, MRT, N478),
+    MAURITIUS("Mauritius", MU, MUS, N480),
+    MAYOTTE("Mayotte", YT, MYT, N175),
+    MEXICO("Mexico", MX, MEX, N484),
+    MICRONESIA_FEDERATED_STATES_OF("Micronesia, Federated States of", FM, FSM, N583),
+    MOLDOVA_REPUBLIC_OF("Moldova, Republic of", MD, MDA, N498),
+    MONACO("Monaco", MC, MCO, N492),
+    MONGOLIA("Mongolia", MN, MNG, N496),
+    MONTENEGRO("Montenegro", ME, MNE, N499),
+    MONTSERRAT("Montserrat", MS, MSR, N500),
+    MOROCCO("Morocco", MA, MAR, N504),
+    MOZAMBIQUE("Mozambique", MZ, MOZ, N508),
+    MYANMAR("Myanmar", MM, MMR, N104),
+    NAMIBIA("Namibia", NA, NAM, N516),
+    NAURU("Nauru", NR, NRU, N520),
+    NEPAL("Nepal", NP, NPL, N524),
+    NETHERLANDS("Netherlands", NL, NLD, N528),
+    NEW_CALEDONIA("New Caledonia", NC, NCL, N540),
+    NEW_ZEALAND("New Zealand", NZ, NZL, N554),
+    NICARAGUA("Nicaragua", NI, NIC, N558),
+    NIGER("Niger", NE, NER, N562),
+    NIGERIA("Nigeria", NG, NGA, N566),
+    NIUE("Niue", NU, NIU, N570),
+    NORFOLK_ISLAND("Norfolk Island", NF, NFK, N574),
+    NORTHERN_MARIANA_ISLANDS("Northern Mariana Islands", MP, MNP, N580),
+    NORWAY("Norway", NO, NOR, N578),
+    OMAN("Oman", OM, OMN, N512),
+    PAKISTAN("Pakistan", PK, PAK, N586),
+    PALAU("Palau", PW, PLW, N585),
+    PALESTINE_STATE_OF("Palestine, State of", PS, PSE, N275),
+    PANAMA("Panama", PA, PAN, N591),
+    PAPUA_NEW_GUINEA("Papua New Guinea", PG, PNG, N598),
+    PARAGUAY("Paraguay", PY, PRY, N600),
+    PERU("Peru", PE, PER, N604),
+    PHILIPPINES("Philippines", PH, PHL, N608),
+    PITCAIRN("Pitcairn", PN, PCN, N612),
+    POLAND("Poland", PL, POL, N616),
+    PORTUGAL("Portugal", PT, PRT, N620),
+    PUERTO_RICO("Puerto Rico", PR, PRI, N630),
+    QATAR("Qatar", QA, QAT, N634),
+    REUNION("Réunion", RE, REU, N638),
+    ROMANIA("Romania", RO, ROU, N642),
+    RUSSIAN_FEDERATION("Russian Federation", RU, RUS, N643),
+    RWANDA("Rwanda", RW, RWA, N646),
+    SAINT_BARTHELEMY("Saint Barthélemy", BL, BLM, N652),
+    SAINT_HELENA_ASCENSION_AND_TRISTAN_DA_CUNHA("Saint Helena, Ascension and Tristan da Cunha", SH, SHN, N654),
+    SAINT_KITTS_AND_NEVIS("Saint Kitts and Nevis", KN, KNA, N659),
+    SAINT_LUCIA("Saint Lucia", LC, LCA, N662),
+    SAINT_MARTIN_FRENCH_PART("Saint Martin (French part)", MF, MAF, N663),
+    SAINT_PIERRE_AND_MIQUELON("Saint Pierre and Miquelon", PM, SPM, N666),
+    SAINT_VINCENT_AND_THE_GRENADINES("Saint Vincent and the Grenadines", VC, VCT, N670),
+    SAMOA("Samoa", WS, WSM, N882),
+    SAN_MARINO("San Marino", SM, SMR, N674),
+    SAO_TOME_AND_PRINCIPE("Sao Tome and Principe", ST, STP, N678),
+    SAUDI_ARABIA("Saudi Arabia", SA, SAU, N682),
+    SENEGAL("Senegal", SN, SEN, N686),
+    SERBIA("Serbia", RS, SRB, N688),
+    SEYCHELLES("Seychelles", SC, SYC, N690),
+    SIERRA_LEONE("Sierra Leone", SL, SLE, N694),
+    SINGAPORE("Singapore", SG, SGP, N702),
+    SINT_MAARTEN_DUTCH_PART("Sint Maarten (Dutch part)", SX, SXM, N534),
+    SLOVAKIA("Slovakia", SK, SVK, N703),
+    SLOVENIA("Slovenia", SI, SVN, N705),
+    SOLOMON_ISLANDS("Solomon Islands", SB, SLB, N090),
+    SOMALIA("Somalia", SO, SOM, N706),
+    SOUTH_AFRICA("South Africa", ZA, ZAF, N710),
+    SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS("South Georgia and the South Sandwich Islands", GS, SGS, N239),
+    SOUTH_SUDAN("South Sudan", SS, SSD, N728),
+    SPAIN("Spain", ES, ESP, N724),
+    SRI_LANKA("Sri Lanka", LK, LKA, N144),
+    SUDAN("Sudan", SD, SDN, N729),
+    SURINAME("Suriname", SR, SUR, N740),
+    SVALBARD_AND_JAN_MAYEN("Svalbard and Jan Mayen", SJ, SJM, N744),
+    SWAZILAND("Swaziland", SZ, SWZ, N748),
+    SWEDEN("Sweden", SE, SWE, N752),
+    SWITZERLAND("Switzerland", CH, CHE, N756),
+    SYRIAN_ARAB_REPUBLIC("Syrian Arab Republic", SY, SYR, N760),
+    TAIWAN_PROVINCE_OF_CHINA("Taiwan, Province of China", TW, TWN, N158),
+    TAJIKISTAN("Tajikistan", TJ, TJK, N762),
+    TANZANIA_UNITED_REPUBLIC_OF("Tanzania, United Republic of", TZ, TZA, N834),
+    THAILAND("Thailand", TH, THA, N764),
+    TIMOR_LESTE("Timor-Leste", TL, TLS, N626),
+    TOGO("Togo", TG, TGO, N768),
+    TOKELAU("Tokelau", TK, TKL, N772),
+    TONGA("Tonga", TO, TON, N776),
+    TRINIDAD_AND_TOBAGO("Trinidad and Tobago", TT, TTO, N780),
+    TUNISIA("Tunisia", TN, TUN, N788),
+    TURKEY("Turkey", TR, TUR, N792),
+    TURKMENISTAN("Turkmenistan", TM, TKM, N795),
+    TURKS_AND_CAICOS_ISLANDS("Turks and Caicos Islands", TC, TCA, N796),
+    TUVALU("Tuvalu", TV, TUV, N798),
+    UGANDA("Uganda", UG, UGA, N800),
+    UKRAINE("Ukraine", UA, UKR, N804),
+    UNITED_ARAB_EMIRATES("United Arab Emirates", AE, ARE, N784),
+    UNITED_KINGDOM("United Kingdom", GB, GBR, N826),
+    UNITED_STATES_MINOR_OUTLYING_ISLANDS("United States Minor Outlying Islands", UM, UMI, N581),
+    UNITED_STATES_OF_AMERICA("United States of America", US, USA, N840),
+    URUGUAY("Uruguay", UY, URY, N858),
+    UZBEKISTAN("Uzbekistan", UZ, UZB, N860),
+    VANUATU("Vanuatu", VU, VUT, N548),
+    VENEZUELA_BOLIVARIAN_REPUBLIC_OF("Venezuela, Bolivarian Republic of", VE, VEN, N862),
+    VIET_NAM("Viet Nam", VN, VNM, N704),
+    VIRGIN_ISLANDS_BRITISH("Virgin Islands, British", VG, VGB, N092),
+    VIRGIN_ISLANDS_US("Virgin Islands, U.S.", VI, VIR, N850),
+    WALLIS_AND_FUTUNA("Wallis and Futuna", WF, WLF, N876),
+    WESTERN_SAHARA("Western Sahara", EH, ESH, N732),
+    YEMEN("Yemen", YE, YEM, N887),
+    ZAMBIA("Zambia", ZM, ZMB, N894),
+    ZIMBABWE("Zimbabwe", ZW, ZWE, N716);
 
-public enum Alpha2 {
+    public enum Alpha2 {
 
         AD,
         AE,
@@ -516,20 +516,20 @@ public enum Alpha2 {
         ZM,
         ZW;
 
-private static final Map<String, Alpha2> BY_CODE = stream(values())
-        .collect(collectingAndThen(toMap(Alpha2::getCode, identity()), Collections::unmodifiableMap));
+        private static final Map<String, Alpha2> BY_CODE = stream(values())
+                .collect(collectingAndThen(toMap(Alpha2::getCode, identity()), Collections::unmodifiableMap));
 
-public final String getCode() {
-        return name();
+        public final String getCode() {
+            return name();
         }
 
-public static Optional<Alpha2> getByCode(String code) {
-        return Optional.ofNullable(BY_CODE.get(code));
+        public static Optional<Alpha2> getByCode(String code) {
+            return Optional.ofNullable(BY_CODE.get(code));
         }
 
-        }
+    }
 
-public enum Alpha3 {
+    public enum Alpha3 {
 
         ABW,
         AFG,
@@ -781,20 +781,20 @@ public enum Alpha3 {
         ZMB,
         ZWE;
 
-private static final Map<String, Alpha3> BY_CODE = stream(values())
-        .collect(collectingAndThen(toMap(Alpha3::getCode, identity()), Collections::unmodifiableMap));
+        private static final Map<String, Alpha3> BY_CODE = stream(values())
+                .collect(collectingAndThen(toMap(Alpha3::getCode, identity()), Collections::unmodifiableMap));
 
-public final String getCode() {
-        return name();
+        public final String getCode() {
+            return name();
         }
 
-public static Optional<Alpha3> getByCode(String code) {
-        return Optional.ofNullable(BY_CODE.get(code));
+        public static Optional<Alpha3> getByCode(String code) {
+            return Optional.ofNullable(BY_CODE.get(code));
         }
 
-        }
+    }
 
-public enum Numeric {
+    public enum Numeric {
 
         N004,
         N008,
@@ -1046,75 +1046,75 @@ public enum Numeric {
         N887,
         N894;
 
-private static final Map<String, Numeric> BY_CODE = stream(values())
-        .collect(collectingAndThen(toMap(Numeric::getCode, identity()), Collections::unmodifiableMap));
+        private static final Map<String, Numeric> BY_CODE = stream(values())
+                .collect(collectingAndThen(toMap(Numeric::getCode, identity()), Collections::unmodifiableMap));
 
-private final String code;
+        private final String code;
 
         Numeric() {
-        this.code = name().substring(1);
+            this.code = name().substring(1);
         }
 
-public final String getCode() {
-        return code;
+        public final String getCode() {
+            return code;
         }
 
-public static Optional<Numeric> getByCode(String code) {
-        return Optional.ofNullable(BY_CODE.get(code));
+        public static Optional<Numeric> getByCode(String code) {
+            return Optional.ofNullable(BY_CODE.get(code));
         }
 
-        }
+    }
 
-private static final Map<Alpha2, Country> BY_ALPHA2 = stream(values())
-        .collect(collectingAndThen(toMap(Country::getAlpha2, identity()), Collections::unmodifiableMap));
+    private static final Map<Alpha2, Country> BY_ALPHA2 = stream(values())
+            .collect(collectingAndThen(toMap(Country::getAlpha2, identity()), Collections::unmodifiableMap));
 
-private static final Map<Alpha3, Country> BY_ALPHA3 = stream(values())
-        .collect(collectingAndThen(toMap(Country::getAlpha3, identity()), Collections::unmodifiableMap));
+    private static final Map<Alpha3, Country> BY_ALPHA3 = stream(values())
+            .collect(collectingAndThen(toMap(Country::getAlpha3, identity()), Collections::unmodifiableMap));
 
-private static final Map<Numeric, Country> BY_NUMERIC = stream(values())
-        .collect(collectingAndThen(toMap(Country::getNumeric, identity()), Collections::unmodifiableMap));
+    private static final Map<Numeric, Country> BY_NUMERIC = stream(values())
+            .collect(collectingAndThen(toMap(Country::getNumeric, identity()), Collections::unmodifiableMap));
 
-private final String name;
+    private final String name;
 
-private final Alpha2 alpha2;
+    private final Alpha2 alpha2;
 
-private final Alpha3 alpha3;
+    private final Alpha3 alpha3;
 
-private final Numeric numeric;
+    private final Numeric numeric;
 
-        Country(String name, Alpha2 alpha2, Alpha3 alpha3, Numeric numeric) {
+    Country(String name, Alpha2 alpha2, Alpha3 alpha3, Numeric numeric) {
         this.name = name;
         this.alpha2 = alpha2;
         this.alpha3 = alpha3;
         this.numeric = numeric;
-        }
+    }
 
-public final String getName() {
+    public final String getName() {
         return name;
-        }
+    }
 
-public final Alpha2 getAlpha2() {
+    public final Alpha2 getAlpha2() {
         return alpha2;
-        }
+    }
 
-public final Alpha3 getAlpha3() {
+    public final Alpha3 getAlpha3() {
         return alpha3;
-        }
+    }
 
-public final Numeric getNumeric() {
+    public final Numeric getNumeric() {
         return numeric;
-        }
+    }
 
-public static Optional<Country> getByAlpha2(Alpha2 alpha2) {
+    public static Optional<Country> getByAlpha2(Alpha2 alpha2) {
         return Optional.ofNullable(BY_ALPHA2.get(alpha2));
-        }
+    }
 
-public static Optional<Country> getByAlpha3(Alpha3 alpha3) {
+    public static Optional<Country> getByAlpha3(Alpha3 alpha3) {
         return Optional.ofNullable(BY_ALPHA3.get(alpha3));
-        }
+    }
 
-public static Optional<Country> getByNumeric(Numeric numeric) {
+    public static Optional<Country> getByNumeric(Numeric numeric) {
         return Optional.ofNullable(BY_NUMERIC.get(numeric));
-        }
+    }
 
-        }
+}
