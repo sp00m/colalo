@@ -530,6 +530,10 @@ public enum Country {
             return code;
         }
 
+        public final Country getCountry() {
+            return Country.getByAlpha2(this);
+        }
+
         public static Optional<Alpha2> getByCode(String code) {
             return Optional.ofNullable(BY_CODE.get(code.toUpperCase()));
         }
@@ -801,6 +805,10 @@ public enum Country {
             return code;
         }
 
+        public final Country getCountry() {
+            return Country.getByAlpha3(this);
+        }
+
         public static Optional<Alpha3> getByCode(String code) {
             return Optional.ofNullable(BY_CODE.get(code.toUpperCase()));
         }
@@ -1070,6 +1078,10 @@ public enum Country {
 
         public final String getCode() {
             return code;
+        }
+
+        public final Country getCountry() {
+            return Country.getByNumeric(this);
         }
 
         public static Optional<Numeric> getByCode(String code) {

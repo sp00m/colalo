@@ -1,6 +1,14 @@
 package com.github.sp00m.colalo;
 
-import java.util.Set;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Optional;
+
+import static java.lang.String.format;
+import static java.util.Arrays.stream;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toMap;
 
 // http://www.oracle.com/technetwork/java/javase/java8locales-2095355.html
 // in_ID --> id_ID
@@ -115,21 +123,41 @@ public enum Locale {
     ZH_SG(Language.Alpha2.ZH, Country.Alpha2.SG),
     ZH_TW(Language.Alpha2.ZH, Country.Alpha2.TW);
 
-    private final Set<Language> languages;
+    private static final String CODE_FORMAT = "%s_%s";
 
-    private final Country country;
+    private static final Map<String, Locale> BY_CODE = stream(values())
+            .collect(collectingAndThen(toMap(locale -> locale.getCode().toUpperCase(), identity()), Collections::unmodifiableMap));
+
+    private final String code;
+
+    private final Language.Alpha2 languageAlpha2;
+
+    private final Country.Alpha2 countryAlpha2;
 
     Locale(Language.Alpha2 languageAlpha2, Country.Alpha2 countryAlpha2) {
-        this.languages = Language.getByAlpha2(languageAlpha2);
-        this.country = Country.getByAlpha2(countryAlpha2);
+        this.code = format(CODE_FORMAT, languageAlpha2.getCode(), countryAlpha2.getCode());
+        this.languageAlpha2 = languageAlpha2;
+        this.countryAlpha2 = countryAlpha2;
     }
 
-    public Set<Language> getLanguages() {
-        return languages;
+    public final String getCode() {
+        return code;
     }
 
-    public Country getCountry() {
-        return country;
+    public final Language.Alpha2 getLanguageAlpha2() {
+        return languageAlpha2;
+    }
+
+    public final Country.Alpha2 getCountryAlpha2() {
+        return countryAlpha2;
+    }
+
+    public static Optional<Locale> getByCode(String code) {
+        return Optional.ofNullable(BY_CODE.get(code.toUpperCase()));
+    }
+
+    public static Optional<Locale> getByCode(Language.Alpha2 languageAlpha2, Country.Alpha2 countryAlpha2) {
+        return getByCode(format(CODE_FORMAT, languageAlpha2.getCode(), countryAlpha2.getCode()));
     }
 
 }

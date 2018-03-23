@@ -275,6 +275,10 @@ public enum Language {
             return name;
         }
 
+        public final Set<Language> getLanguages() {
+            return Language.getByFamily(this);
+        }
+
     }
 
     public enum Alpha2 {
@@ -476,6 +480,10 @@ public enum Language {
 
         public final String getCode() {
             return code;
+        }
+
+        public final Set<Language> getLanguages() {
+            return Language.getByAlpha2(this);
         }
 
         public static Optional<Alpha2> getByCode(String code) {
@@ -685,6 +693,10 @@ public enum Language {
             return code;
         }
 
+        public final Set<Language> getLanguages() {
+            return Language.getByAlpha3T(this);
+        }
+
         public static Optional<Alpha3T> getByCode(String code) {
             return Optional.ofNullable(BY_CODE.get(code.toLowerCase()));
         }
@@ -892,6 +904,10 @@ public enum Language {
             return code;
         }
 
+        public final Set<Language> getLanguages() {
+            return Language.getByAlpha3B(this);
+        }
+
         public static Optional<Alpha3B> getByCode(String code) {
             return Optional.ofNullable(BY_CODE.get(code.toLowerCase()));
         }
@@ -938,23 +954,23 @@ public enum Language {
         this.alpha3B = alpha3B;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public Family getFamily() {
+    public final Family getFamily() {
         return family;
     }
 
-    public Alpha2 getAlpha2() {
+    public final Alpha2 getAlpha2() {
         return alpha2;
     }
 
-    public Alpha3T getAlpha3T() {
+    public final Alpha3T getAlpha3T() {
         return alpha3T;
     }
 
-    public Alpha3B getAlpha3B() {
+    public final Alpha3B getAlpha3B() {
         return alpha3B;
     }
 
