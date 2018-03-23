@@ -1105,16 +1105,16 @@ public enum Country {
         return numeric;
     }
 
-    public static Optional<Country> getByAlpha2(Alpha2 alpha2) {
-        return Optional.ofNullable(BY_ALPHA2.get(alpha2));
+    public static Country getByAlpha2(Alpha2 alpha2) {
+        return BY_ALPHA2.get(alpha2);
     }
 
-    public static Optional<Country> getByAlpha3(Alpha3 alpha3) {
-        return Optional.ofNullable(BY_ALPHA3.get(alpha3));
+    public static Country getByAlpha3(Alpha3 alpha3) {
+        return BY_ALPHA3.get(alpha3);
     }
 
-    public static Optional<Country> getByNumeric(Numeric numeric) {
-        return Optional.ofNullable(BY_NUMERIC.get(numeric));
+    public static Country getByNumeric(Numeric numeric) {
+        return BY_NUMERIC.get(numeric);
     }
 
 }
