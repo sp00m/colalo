@@ -12,6 +12,10 @@ import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toMap;
 
+// https://www.wikiwand.com/en/ISO_3166
+// https://www.wikiwand.com/en/ISO_3166-1_alpha-2
+// https://www.wikiwand.com/en/ISO_3166-1_alpha-3
+// https://www.wikiwand.com/en/ISO_3166-1_numeric
 public enum Country {
 
     AFGHANISTAN("Afghanistan", AF, AFG, N004),
@@ -519,12 +523,18 @@ public enum Country {
         private static final Map<String, Alpha2> BY_CODE = stream(values())
                 .collect(collectingAndThen(toMap(Alpha2::getCode, identity()), Collections::unmodifiableMap));
 
+        private final String code;
+
+        Alpha2() {
+            this.code = name();
+        }
+
         public final String getCode() {
-            return name();
+            return code;
         }
 
         public static Optional<Alpha2> getByCode(String code) {
-            return Optional.ofNullable(BY_CODE.get(code));
+            return Optional.ofNullable(BY_CODE.get(code.toUpperCase()));
         }
 
     }
@@ -784,12 +794,18 @@ public enum Country {
         private static final Map<String, Alpha3> BY_CODE = stream(values())
                 .collect(collectingAndThen(toMap(Alpha3::getCode, identity()), Collections::unmodifiableMap));
 
+        private final String code;
+
+        Alpha3() {
+            this.code = name();
+        }
+
         public final String getCode() {
-            return name();
+            return code;
         }
 
         public static Optional<Alpha3> getByCode(String code) {
-            return Optional.ofNullable(BY_CODE.get(code));
+            return Optional.ofNullable(BY_CODE.get(code.toUpperCase()));
         }
 
     }
@@ -1060,7 +1076,7 @@ public enum Country {
         }
 
         public static Optional<Numeric> getByCode(String code) {
-            return Optional.ofNullable(BY_CODE.get(code));
+            return Optional.ofNullable(BY_CODE.get(code.toUpperCase()));
         }
 
     }
