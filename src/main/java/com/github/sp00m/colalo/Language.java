@@ -1,8 +1,8 @@
 package com.github.sp00m.colalo;
 
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.EnumMap;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -914,27 +914,27 @@ public enum Language {
 
     }
 
-    private static <V> Set<V> toImmutableSet(List<V> mutableList) {
-        return unmodifiableSet(new HashSet<>(mutableList));
+    private static <V extends Enum<V>> Set<V> toImmutableSet(List<V> mutableList) {
+        return unmodifiableSet(EnumSet.copyOf(mutableList));
     }
 
-    private static <K, V> Map<K, Set<V>> freeze(Map<K, List<V>> mutableMap) {
-        Map<K, Set<V>> outputMap = new HashMap<>();
+    private static <K extends Enum<K>, V extends Enum<V>> Map<K, Set<V>> freeze(Map<K, List<V>> mutableMap, Class<K> keyType) {
+        Map<K, Set<V>> outputMap = new EnumMap<>(keyType);
         mutableMap.forEach((key, mutableValues) -> outputMap.put(key, toImmutableSet(mutableValues)));
         return unmodifiableMap(outputMap);
     }
 
     private static final Map<Family, Set<Language>> BY_FAMILY = stream(values())
-            .collect(collectingAndThen(groupingBy(Language::getFamily), Language::freeze));
+            .collect(collectingAndThen(groupingBy(Language::getFamily), byFamily -> freeze(byFamily, Family.class)));
 
     private static final Map<Alpha2, Set<Language>> BY_ALPHA2 = stream(values())
-            .collect(collectingAndThen(groupingBy(Language::getAlpha2), Language::freeze));
+            .collect(collectingAndThen(groupingBy(Language::getAlpha2), byAlpha2 -> freeze(byAlpha2, Alpha2.class)));
 
     private static final Map<Alpha3T, Set<Language>> BY_ALPHA3T = stream(values())
-            .collect(collectingAndThen(groupingBy(Language::getAlpha3T), Language::freeze));
+            .collect(collectingAndThen(groupingBy(Language::getAlpha3T), byAlpha3T -> freeze(byAlpha3T, Alpha3T.class)));
 
     private static final Map<Alpha3B, Set<Language>> BY_ALPHA3B = stream(values())
-            .collect(collectingAndThen(groupingBy(Language::getAlpha3B), Language::freeze));
+            .collect(collectingAndThen(groupingBy(Language::getAlpha3B), byAlpha3B -> freeze(byAlpha3B, Alpha3B.class)));
 
     private final String name;
 
